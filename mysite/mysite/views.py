@@ -14,4 +14,4 @@ from django.utils import timezone
 
 
 def index(request):
-    return HttpResponse('Welcome by yuanyijie!')
+    return render(request, 'mysite/index.html', )
