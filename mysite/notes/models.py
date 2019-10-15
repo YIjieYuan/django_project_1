@@ -21,16 +21,16 @@ def user_directory_path(instance, filename):# Rename the file
 
 class Note(models.Model):
     author = models.CharField('author', max_length=15, default='Yijie Yuan')
-    # file = models.FileField(upload_to=user_directory_path, null=True)
     title = models.CharField('title', max_length=200, unique=True)
-    # slug = models.SlugField('slug', max_length=60, blank=True)
+    category = models.CharField('category', max_length=200, null=True)
     body = models.TextField('body', )
-    pub_date = models.DateTimeField('pub_date', null=True)
+    # pub_date = models.DateTimeField('pub_date', null=True)
+    # file = models.FileField(upload_to=user_directory_path, null=True)
+    # slug = models.SlugField('slug', max_length=60, blank=True)
     # create_date = models.DateTimeField('create_date', auto_now_add=True)
     # mod_date = models.DateTimeField('mode_date', auto_now=True)
     # status = models.CharField('status', max_length=1, choices=STATUS_CHOICES, default='p')
     # views = models.PositiveIntegerField('views', default=0)
-    category = models.CharField('category', max_length=200, null=True)
     # category = models.ForeignKey('Category', verbose_name='category', on_delete=models.CASCADE, blank=False, null=False)
     # tags = models.ManyToManyField('Tag', verbose_name='tag', blank=True)
 
