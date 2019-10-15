@@ -2,14 +2,14 @@
  * Globals
  */
 
-.row {
+.haha {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
 }
-.row > [class*='col-'] {
+.haha > [class*='col-'] {
     display: flex;
     flex-direction: column;
 }

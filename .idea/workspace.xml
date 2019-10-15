@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1df6e48f-d9df-4c99-a3dd-c11567a57624" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/mysite/notes/templates/notes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/notes/templates/notes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/static/blog_extra.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/blog_extra.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../workshop0/rwd/foobar.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../workshop0/rwd/get-pip.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../workshop0/rwd/uwsgi_params" beforeDir="false" />
@@ -44,20 +45,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mysite/notes/templates/notes/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
+            <state relative-caret-position="163">
+              <caret line="114" column="14" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#html#0;n#!!top" />
                 <element signature="n#div#3;n#div#0;n#div#0;n#div#1;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-                <element signature="n#div#4;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-                <element signature="n#div#5;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-                <element signature="n#div#6;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#2;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#div#2;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#div#0;n#div#2;n#html#0;n#!!top" />
+                <element signature="n#div#4;n#div#0;n#div#2;n#html#0;n#!!top" />
+                <element signature="n#div#5;n#div#0;n#div#2;n#html#0;n#!!top" />
+                <element signature="n#div#6;n#div#0;n#div#2;n#html#0;n#!!top" />
+                <element signature="n#div#7;n#div#0;n#div#2;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -66,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/static/blog_extra.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state relative-caret-position="165">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -75,17 +76,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/static/blog.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="75">
+              <caret line="5" column="37" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/mysite/views.py">
+        <entry file="file://$PROJECT_DIR$/mysite/static/bootstrap.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="144">
+              <caret line="4" column="21879" selection-start-line="4" selection-start-column="21875" selection-end-line="4" selection-end-column="21879" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/static/dashboard.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -120,15 +130,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/notes/templates/notes/notes_detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/templates/mysite/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="469">
@@ -154,6 +155,9 @@
       <find>session</find>
       <find>body</find>
       <find>br</find>
+      <find>row</find>
+      <find>col</find>
+      <find>col-</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -476,12 +480,12 @@
       <workItem from="1570839437322" duration="25702000" />
       <workItem from="1570990366649" duration="3223000" />
       <workItem from="1571012744719" duration="352000" />
-      <workItem from="1571077388058" duration="21287000" />
+      <workItem from="1571077388058" duration="22896000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74666000" />
+    <option name="totallyTimeSpent" value="76275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -530,13 +534,6 @@
     <SUITE FILE_PATH="coverage/django_project_1$settings.coverage" NAME="settings Coverage Results" MODIFIED="1570662194909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/mysite" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../.virtualenvs/django_project_1/lib/python3.7/site-packages/django/db/backends/mysql/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/media/files/83a6556051.jpg" />
     <entry file="file://$PROJECT_DIR$/mysite/media/files/bd47d6693f.jpg" />
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/django_project_1/lib/python3.7/site-packages/django/template/base.py">
@@ -751,13 +748,6 @@
         <state relative-caret-position="-140" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/static/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3105">
-          <caret line="4" column="29682" selection-start-line="4" selection-start-column="29678" selection-end-line="4" selection-end-column="29682" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../workshop0/rwd/templates/rango/category.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-234" />
@@ -834,20 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/static/blog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/static/blog_extra.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/templates/mysite/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
@@ -855,22 +831,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/static/blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/static/dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/static/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="4" column="21879" selection-start-line="4" selection-start-column="21875" selection-end-line="4" selection-end-column="21879" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/static/blog_extra.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/notes/templates/notes/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
+        <state relative-caret-position="163">
+          <caret line="114" column="14" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
           <folding>
             <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#html#0;n#!!top" />
             <element signature="n#div#3;n#div#0;n#div#0;n#div#1;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-            <element signature="n#div#5;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
-            <element signature="n#div#6;n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#2;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#2;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#2;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#div#2;n#html#0;n#!!top" />
+            <element signature="n#div#5;n#div#0;n#div#2;n#html#0;n#!!top" />
+            <element signature="n#div#6;n#div#0;n#div#2;n#html#0;n#!!top" />
+            <element signature="n#div#7;n#div#0;n#div#2;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
