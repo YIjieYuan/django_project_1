@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- saved from url=(0038)https://v3.bootcss.com/examples/blog/# -->
+<html lang="zh-CN"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://v3.bootcss.com/favicon.ico">
+    <title>notes_detail</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this   -->
+    <link href="{% static 'blog.css' %}" rel="stylesheet">
+
+    <!-- Code highlight-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- 修复Typora导出的html导致导航栏变窄问题 20191014 -->
+    <style type="text/css">
+        body.typora-export { padding-left: 0px !important; padding-right: 0px !important; }
+    </style>
+
+</head>
+<!-- This is the notes index.-->
+
+<!--{% if notes_list %}-->
+<!--    <ul>-->
+<!--    {% for note in notes_list %}-->
+<!--        <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>-->
+<!--    {% endfor %}-->
+<!--    </ul>-->
+<!--{% else %}-->
+<!--    <p>No polls are available.</p>-->
+<!--{% endif %}-->
+    <!-- 导航顶栏 -->
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item" href="{% url 'index' %}">Home</a>
+          <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Databases</a>
+          <a class="blog-nav-item active" href="{% url 'notes:index' %}#">Note</a>
+          <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Research</a>
+          <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Life</a>
+          <a class="blog-nav-item" href="{% url 'polls:index' %}">Test</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 笔记列表 -->
+    <br/>
+    <div class="container">
+        <!-- django -->
+        <div class="col-lg-3">
+            <h4>Django笔记</h4>
+            <p>
+                {% if django_list %}
+                    <ul>
+                        {% for note in django_list %}
+                            <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    None yet.
+                {% endif %}
+            </p>
+        </div>
+        <!-- mp500 -->
+        <div class="col-lg-3">
+            <h4>MP 500</h4>
+            <p>
+                {% if mp500_list %}
+                    <ul>
+                        {% for note in mp500_list %}
+                            <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    None yet.
+                {% endif %}
+            </p>
+        </div>
+        <!-- mp505 -->
+        <div class="col-lg-3">
+            <h4>MP 505</h4>
+            <p>
+                {% if 505_list %}
+                    <ul>
+                        {% for note in mp505_list %}
+                            <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    None yet.
+                {% endif %}
+            </p>
+        </div>
+        <!-- mp530 -->
+        <div class="col-lg-3">
+            <h4>MP 530</h4>
+            <p>
+                {% if mp530_list %}
+                    <ul>
+                        {% for note in mp530_list %}
+                            <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    None yet.
+                {% endif %}
+            </p>
+        </div>
+
+    </div>
+
+
+   <!-- javascript -->
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+        <!-- Code highlight-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</body>
+</html>

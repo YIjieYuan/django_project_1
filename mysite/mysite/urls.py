@@ -19,8 +19,13 @@ from django.contrib import admin
 from django.urls import include, path
 from . import views
 
+# 让 Django 使用 MEDIA_URL 伺服媒体内容
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('', views.index, name='index'),
+    path('notes/', include('notes.urls')),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
