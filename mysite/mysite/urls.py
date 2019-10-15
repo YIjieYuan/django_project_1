@@ -25,7 +25,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('notes/', include('notes.urls')),
-    path('polls/', include('polls.urls')),
+    path('notes/', include('notes.urls', namespace='notes')),
+    path('polls/', include('polls.urls', namespace='polls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
