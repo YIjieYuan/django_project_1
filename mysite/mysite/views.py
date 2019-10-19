@@ -18,13 +18,11 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    print('hi')
     # return render(request, 'mysite/index.html', )
     message = ''
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
-        print(username, password)
         message = '请检查填写的内容！'
         if username.strip() and password:
             user = auth.authenticate(username=username, password=password)
@@ -32,16 +30,13 @@ def index(request):
                 message = '账号未激活'
                 if user.is_active:
                     auth.login(request, user)
-                    print(1)
                     return redirect('.')
 
                 else:
-                    print(2)
                     return render(request, 'mysite/index.html', {'message': message})
 
             else:
                 message = '账号密码输入错误！'
-                print(3)
                 return render(request, 'mysite/index.html', {'message': message})
 
 
@@ -49,9 +44,7 @@ def index(request):
             # 用户名字符合法性验证
             # 密码长度验证...
         else:
-            print(4)
             return render(request, 'mysite/index.html', {'message': message})
-    print(5)
     return render(request, 'mysite/index.html', {'message': message})
 
 
