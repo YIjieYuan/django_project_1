@@ -1,0 +1,18 @@
+
+
+.note-box{
+	padding: 0 12px 24px;
+	margin: 0;
+}
+
+.note-list-box {
+	min-height: 200px;
+	padding: 40px 35px;
+	text-align: left;
+	background: #f8f8f8;
+}
+
+
+.block-name {
+	color: #428bca;
+}

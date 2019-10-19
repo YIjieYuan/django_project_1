@@ -25,6 +25,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('logout/', views.user_logout, name='logout'),
     path('notes/', include('notes.urls', namespace='notes')),
     path('polls/', include('polls.urls', namespace='polls')),
     path('admin/', admin.site.urls),

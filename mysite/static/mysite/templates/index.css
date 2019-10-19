@@ -1,0 +1,59 @@
+/*index页面*/
+
+/*没有登录的时候*/
+.index-block-1-unlogged .container {
+    height: 100%;
+    z-index: 1;
+    padding: 150px 30px;
+}
+
+/* Designing the banner title */
+.index-block-1-unlogged .sign-in {
+    padding: 50px;
+	text-align: left;
+}
+
+/*登录的时候*/
+.index-block-1-logged .container {
+    height: 100%;
+    z-index: 1;
+    padding: 115px 0;
+}
+
+
+/*form-signin*/
+.form-signin {
+  max-width: 330px;
+  padding: 80px 30px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading {
+  margin-bottom: 10px;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin .error-message {
+    text-align: right;
+    color: #ff0000;
+}

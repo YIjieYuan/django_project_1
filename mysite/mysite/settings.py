@@ -36,9 +36,9 @@ ALLOWED_HOSTS = ['172.104.127.201',
 
 INSTALLED_APPS = [
     'notes.apps.NotesConfig',
-    # 'databases.apps.DatabasesConfig',
-    # 'research.apps.ResearchConfig',
-    # 'life.apps.LifeConfig',
+    'databases.apps.DatabasesConfig',
+    'research.apps.ResearchConfig',
+    'life.apps.LifeConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -90,9 +90,6 @@ DATABASES = {
         'PASSWORD': '123456',
         'PORT': '3306',
         'HOST': '127.0.0.1',
-
-
-
     }
 }
 
@@ -106,6 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {'min_length': 6, }
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -142,3 +140,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, "collected_static")
 # specify media root for user uploaded files,
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+#
+# Registration 20191017
+#
+# REGISTRATION_OPEN = True  # 设为 True，允许用户注册
+# ACCOUNT_ACTIVATION_DAYS = 7  # 留一周的激活时间；当然，也可以设为其他值
+# REGISTRATION_AUTO_LOGIN = True  # 设为 True，注册后自动登录
+# LOGIN_REDIRECT_URL = '/polls/'  # 登录后呈现给用户的页面
+# LOGIN_URL = '/accounts/login/'  # 未登录以及访问需要验证身份的页面时重定向的页面
+

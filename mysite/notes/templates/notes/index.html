@@ -1,256 +1,289 @@
-<!DOCTYPE html>
+{% extends 'notes/base.html' %}
 {% load static %}
-<!-- saved from url=(0038)https://v3.bootcss.com/examples/blog/# -->
-<html lang="zh-CN"><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="https://v3.bootcss.com/favicon.ico">
-    <title>notes_detail</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+{% block title_block %}
+    notes_index
+{% endblock %}
 
+{% block css_block%}
     <!-- Custom styles for this   -->
-    <link href="{% static 'blog.css' %}" rel="stylesheet">
-    <link href="{% static 'blog_extra.css' %}" rel="stylesheet">
+    <link href="{% static 'mysite/templates/blog.css' %}" rel="stylesheet">
+    <link href="{% static 'notes/templates/custom.css' %}" rel="stylesheet">
+{% endblock %}
 
-    <!-- Code highlight-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
-
-    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- 修复Typora导出的html导致导航栏变窄问题 20191014 -->
-    <style type="text/css">
-        body.typora-export { padding-left: 0px !important; padding-right: 0px !important; }
-    </style>
-
-</head>
-<!-- This is the notes index.-->
-
-<!--{% if notes_list %}-->
-<!--    <ul>-->
-<!--    {% for note in notes_list %}-->
-<!--        <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>-->
-<!--    {% endfor %}-->
-<!--    </ul>-->
-<!--{% else %}-->
-<!--    <p>No polls are available.</p>-->
-<!--{% endif %}-->
-    <!-- 导航顶栏 -->
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item" href="{% url 'index' %}">Home</a>
-          <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Databases</a>
-          <a class="blog-nav-item active" href="{% url 'notes:index' %}#">Note</a>
-          <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Research</a>
-          <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Life</a>
-          <a class="blog-nav-item" href="{% url 'polls:index' %}">Test</a>
-        </nav>
-      </div>
-    </div>
-
+{% block body_block %}
     <!-- 笔记列表 -->
     <br/>
-
-
+    <br/>
     <!-- medical physics   -->
-    <div class = 'container'>
-        <h1>Medical Physics</h1><br/>
-        <div class="row" class="col-xs-12" class="col-sm-12" class="col-md-12" class="col-lg-12">
-            <!-- mp500 -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>MP 500</h4>
-                <p>
-                    {% if mp500_list %}
-                        <ul>
-                            {% for note in mp500_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-            <!-- mp505 -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>MP 505</h4>
-                <p>
-                    {% if 505_list %}
-                        <ul>
-                            {% for note in mp505_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-            <!-- mp530 -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>MP 530</h4>
-                <p>
-                    {% if mp530_list %}
-                    <ul>
-                        {% for note in mp530_list %}
-                            <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-        </div>
+    <div class="container">
+        {% for sup_category in sup_category_set %}
+            <h3 align="center"><em class="block-name"><span>{{ sup_category.id }}| </span>{{ sup_category.name }}</em></h3><br/>
+            {% for category in sup_category.category_list %}
+                {% if category.id == 1 or category.id == 4 or category.id == 7 or category.id == 10 %}
+                    <div class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">
+                            <div class="note-list-box">
+                                <a href="{% url 'notes:list' category.name %}"><h4>{{ category.name }}</h4></a>
+                                <p>
+                                {% if category.note_list %}
+                                    <ul>
+                                        {% for note in category.note_list %}
+                                            <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    None yet.
+                                {% endif %}
+                                </p>
+                            </div>
+                        </div>
+
+                {% else %}
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">
+                            <div class="note-list-box">
+                                <a href="{% url 'notes:list' category.name %}"><h4>{{ category.name }}</h4></a>
+                                <p>
+                                {% if category.note_list %}
+                                    <ul>
+                                        {% for note in category.note_list %}
+                                            <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    None yet.
+                                {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        {% if category.id == 3 or category.id == 6 or category.id == 9 or category.id == 12 %}
+                    </div>
+                        {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
     </div>
 
-    <!-- computer tools   -->
-    <div class = 'container'>
-        <h1>Computer Tools</h1><br/>
-        <div class="row" class="col-xs-12" class="col-sm-12" class="col-md-12" class="col-lg-12">
-            <!-- django -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>Django笔记</h4>
-                <p>
-                    {% if django_list %}
-                        <ul>
-                            {% for note in django_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-            <!-- git -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>Git笔记</h4>
-                <p>
-                    {% if git_list %}
-                        <ul>
-                            {% for note in git_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-            <!-- mac -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>Mac笔记</h4>
-                <p>
-                    {% if mac_list %}
-                        <ul>
-                            {% for note in mac_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-            <!-- matlab -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>Matlab笔记</h4>
-                <p>
-                    {% if matlab_list %}
-                        <ul>
-                            {% for note in matlab_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-        </div>
-        <div class="row" class="col-xs-12" class="col-sm-12" class="col-md-12" class="col-lg-12">
-            <!-- mysql -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>Mysql笔记</h4>
-                <p>
-                    {% if mysql_list %}
-                        <ul>
-                            {% for note in mysql_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-            <!-- python -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>Python笔记</h4>
-                <p>
-                    {% if python_list %}
-                        <ul>
-                            {% for note in python_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-            <!-- shell -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>Shell笔记</h4>
-                <p>
-                    {% if shell_list %}
-                        <ul>
-                            {% for note in shell_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-            <!-- software -->
-            <div class="col-xs-3" class="col-sm-3" class="col-md-3" class="col-lg-3">
-                <h4>Software笔记</h4>
-                <p>
-                    {% if software_list %}
-                        <ul>
-                            {% for note in software_list %}
-                                <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        None yet.
-                    {% endif %}
-                </p>
-            </div>
-        </div>
-    </div>
+<!--    <div class='container'>-->
+<!--        <h3 align="center"><em class="block-name"><span>01| </span>Medical Physics</em></h3><br/>-->
+<!--        <div class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+<!--            &lt;!&ndash; mp500 &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'mp500' %}"><h4>MP 500</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if mp500 %}-->
+<!--                            <ul>-->
+<!--                                {% for note in mp500 %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; mp505 &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'mp505' %}"><h4>MP 505</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if mp505 %}-->
+<!--                            <ul>-->
+<!--                                {% for note in mp505 %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; mp530 &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'mp530' %}"><h4>MP 530</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if mp530 %}-->
+<!--                        <ul>-->
+<!--                            {% for note in mp530 %}-->
+<!--                                <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                            {% endfor %}-->
+<!--                        </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; computer science   &ndash;&gt;-->
+<!--    <div class = 'container'>-->
+<!--        <h3 align="center"><em class="block-name"><span>02| </span>Computer Science</em></h3><br/>-->
+<!--        <div class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+<!--            &lt;!&ndash; django &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'django' %}"><h4>Django笔记</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if django_list %}-->
+<!--                            <ul>-->
+<!--                                {% for note in django_list %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; git &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                <a href="{% url 'notes:list' 'git' %}"><h4>Git笔记</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if git_list %}-->
+<!--                            <ul>-->
+<!--                                {% for note in git_list %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; mac &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'mac' %}"><h4>Mac笔记</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if mac_list %}-->
+<!--                            <ul>-->
+<!--                                {% for note in mac_list %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+<!--            &lt;!&ndash; matlab &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'matlab' %}"><h4>matlab笔记</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if matlab_list %}-->
+<!--                            <ul>-->
+<!--                                {% for note in matlab_list %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; mysql &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'mysql' %}"><h4>Mysql笔记</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if mysql_list %}-->
+<!--                            <ul>-->
+<!--                                {% for note in mysql_list %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; python &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'python' %}"><h4>Python笔记</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if python_list %}-->
+<!--                            <ul>-->
+<!--                                {% for note in python_list %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+<!--            &lt;!&ndash; shell &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'shell' %}"><h4>Shell笔记</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if shell_list %}-->
+<!--                            <ul>-->
+<!--                                {% for note in shell_list %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; software &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'software' %}"><h4>Software笔记</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if software_list %}-->
+<!--                            <ul>-->
+<!--                                {% for note in software_list %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; html and css &ndash;&gt;-->
+<!--            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">-->
+<!--                <div class="note-list-box">-->
+<!--                    <a href="{% url 'notes:list' 'html' %}"><h4>Html & Css笔记</h4></a>-->
+<!--                    <p>-->
+<!--                        {% if html_list %}-->
+<!--                            <ul>-->
+<!--                                {% for note in html_list %}-->
+<!--                                    <li><a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                        {% else %}-->
+<!--                            None yet.-->
+<!--                        {% endif %}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+{% endblock %}
 
-
-   <!-- javascript -->
-    <script src="{% static 'jquery.min.js' %}"></script>
-    <script src="{% static 'bootstrap.min.js' %}"></script>
-        <!-- Code highlight-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    </body>
-</body>
-</html>
+{% block js_block %}
+{% endblock %}

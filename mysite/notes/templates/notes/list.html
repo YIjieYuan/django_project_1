@@ -1,0 +1,42 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    notes_list
+{% endblock %}
+
+{% block css_block%}
+    <!-- Custom styles for this   -->
+    <link href="{% static 'mysite/templates/blog.css' %}" rel="stylesheet">
+    <link href="{% static 'notes/templates/blog-list-custom.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body_block %}
+    <!-- 笔记列表 -->
+    <div class="container" >
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 note-list-container">
+            {% if note_list %}
+                {% for sub_category in sub_category_set %}
+                    <p>{{ sub_category }}</p>
+                    {% for note in note_list %}
+                        {% if note.sub_category == sub_category %}
+                            <div class="note-list-title">
+                                <a href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a>
+                            </div>
+                            <div class="note-list-author">
+                                {{ note.author }}
+                                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                                {{ note.pub_date }}
+                        &nbsp;       &nbsp;
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block js_block %}
+{% endblock %}
+

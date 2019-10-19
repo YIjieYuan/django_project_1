@@ -19,59 +19,68 @@ from django.urls import reverse
 
 # model
 from .models import Note
-
-#
-import markdown
-
-# Upload File with ModelForm
-# def model_form_upload(request):
-#     if request.method == "POST":
-#         form = FileUploadModelForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("/file/")
-#     else:
-#         form = FileUploadModelForm()
-#
-#     return render(request, 'notes/upload_form.html', {'form': form,
-#                                                             'heading': 'Upload files with ModelForm'})
+from operator import itemgetter
 
 
 def notes_index(request):
-    # notes_list = Note.objects.all()
-    #Medical Physics
-    mp500_list = Note.objects.filter(category='mp500').order_by('title')
-    mp505_list = Note.objects.filter(category='mp505').order_by('title')
-    mp530_list = Note.objects.filter(category='mp530').order_by('title')
+    note_set = Note.objects.all().order_by('title')
 
-    #Computal Tools
-    django_list = Note.objects.filter(category='django').order_by('title')
-    git_list = Note.objects.filter(category='git').order_by('title')
-    mac_list = Note.objects.filter(category='mac').order_by('title')
-    matlab_list = Note.objects.filter(category='matlab').order_by('title')
-    mysql_list = Note.objects.filter(category='mysql').order_by('title')
-    python_list = Note.objects.filter(category='python').order_by('title')
-    shell_list = Note.objects.filter(category='shell').order_by('title')
-    software_list = Note.objects.filter(category='software').order_by('title')
+    category_set = []
+    for note in note_set:
+        if note.category not in category_set:
+            category_set.append(note.category)
+    category_set.sort(key=str.lower)
 
-    context = {'mp500_list': mp500_list,
-               'mp505_list': mp505_list,
-               'mp530_list': mp530_list,
+    sup_category_set = []
+    sup_category_number = 1
+    for note in note_set:
+        category_list = []
+        category_number = 1
+        if note.sup_category not in [item['name'] for item in sup_category_set]:
+            for note_sup in Note.objects.filter(sup_category=note.sup_category):
+                note_list = []
+                if note_sup.category not in [item['name'] for item in category_list]:
+                    for note_cat in Note.objects.filter(category=note_sup.category).order_by('-pub_date')[:5]:
+                        note_list.append({'title': note_cat.title,
+                                          'category': note_cat.category,
+                                          'slug': note_cat.slug})
 
-               'django_list': django_list,
-               'git_list': git_list,
-               'mac_list': mac_list,
-               'matlab_list': matlab_list,
-               'mysql_list': mysql_list,
-               'python_list': python_list,
-               'shell_list': shell_list,
-               'software_list': software_list,
-               }
+                    category_list.append({'id': category_number,
+                                          'name': note_sup.category,
+                                          'note_list': note_list})
+                    category_number += 1
+            category_list.sort(key=itemgetter('id'))
+            sup_category_set.append({'id': sup_category_number,
+                                     'name': note.sup_category,
+                                     'category_list': category_list})
+            sup_category_number += 1
+    sup_category_set.sort(key=itemgetter('id'))
+
+    print(sup_category_set)
+
+    context = {}
+    for category in category_set:
+        context[category] = Note.objects.filter(category=category).order_by('-pub_date')[:5]
+    context['category_set'] = category_set
+    context['sup_category_set'] = sup_category_set
+
     return render(request, 'notes/index.html', context=context)
 
 
-def notes_detail(request, note_id):
-    note = get_object_or_404(Note, pk=note_id)
-    return render(request, 'notes/notes_detail.html', {'note': note})
+def notes_list(request, category):
+    note_set = Note.objects.filter(category=category).order_by('title')
+    sub_category_set = []
+    for note in note_set:
+        if note.sub_category not in sub_category_set:
+            sub_category_set.append(note.sub_category)
+    sub_category_set.sort(key=str.lower)
+    return render(request, 'notes/list.html', {'note_list': note_set,
+                                               'sub_category_set': sub_category_set,
+                                               })
+
+
+def notes_detail(request, category, notes_slug):
+    note = get_object_or_404(Note, category=category, slug=notes_slug)
+    return render(request, 'notes/detail.html', {'note': note})
 
 

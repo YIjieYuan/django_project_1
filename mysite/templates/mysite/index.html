@@ -1,51 +1,100 @@
-{% load static %}
 <!DOCTYPE html>
+
+{% load static %}
+
 <html lang="zh-CN">
-  <! -- #####################################################Head -->
-  <head>
-    <meta charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Index</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://v3.bootcss.com/favicon.ico">
+    <title>notes_detail</title>
 
-    <!-- Bootstrap -->
-    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'mysite/templates/bootstrap.min.css' %}" rel="stylesheet">
+
     <!-- Custom styles for this   -->
-    <link href="{% static 'blog.css' %}" rel="stylesheet">
+    <link href="{% static 'mysite/templates/blog.css' %}" rel="stylesheet">
+    <link href="{% static 'mysite/templates/index.css' %}" rel="stylesheet">
+
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 
-  </head>
+</head>
 
-  <! -- #####################################################Main -->
-  <body>
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Databases</a>
-          <a class="blog-nav-item" href="{% url 'notes:index' %}#">Note</a>
-          <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Research</a>
-          <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Life</a>
-          <a class="blog-nav-item" href="{% url 'polls:index' %}">Test</a>
-        </nav>
-      </div>
+<body>
+{% if user.is_authenticated %}
+    <div class="for-foot-main-content">
+        <div class="blog-masthead">
+            <div class="container">
+                <nav class="blog-nav">
+                    <a class="blog-nav-item active" href="#">Home</a>
+                    <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Databases</a>
+                    <a class="blog-nav-item" href="{% url 'notes:index' %}#">Notes</a>
+                    <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Research</a>
+                    <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Life</a>
+                    <a class="blog-nav-item" href="{% url 'polls:index' %}">Test</a>
+                    <a class="blog-nav-item" href="{% url 'logout' %}">Logout</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="index-block-1-logged">
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>
+                   Hello!
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- footer -->
+    <footer class="blog-footer">
+      <p>Blog built by <a href="http://www.yuanyijie.me">yuanyijie</a>.@copyright 2019</p>
+    </footer>
 
-    <div class="container">
-      <div class="blog-header">
-        <h1 class="blog-title">Yuanyijie's blog</h1>
-        <p class="lead blog-description">on building...</p>
-      </div>
+{% else %}
+    <div class="index-block-1-unlogged">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sign-in">
+                {% if message %}
+                    <form class="form-signin" method="post" action=".">
+                        {% csrf_token %}
+                        <h2 class="form-signin-heading">Please sign in</h2>
+                        <label for="input-username" class="sr-only">Username</label>
+                        <input type="text" name="username" id="input-username" class="form-control" placeholder="guest" required="" autofocus="">
+                        <label for="input-password" class="sr-only">Password</label>
+                        <input type="password" name="password" id="input-password" class="form-control" placeholder="laodilaile2" required="">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <p class="error-message">{{message}}</p>
+                    </form>
+                {% else %}
+                    <form class="form-signin" method="post" action=".">
+                        {% csrf_token %}
+                        <h2 class="form-signin-heading">Please sign in</h2>
+                        <label for="input-username" class="sr-only">Username</label>
+                        <input type="text" name="username" id="input-username" class="form-control" placeholder="guest" required="" autofocus="">
+                        <label for="input-password" class="sr-only">Password</label>
+                        <input type="password" name="password" id="input-password" class="form-control" placeholder="laodilaile2" required="">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </form>
+                {% endif %}
+            </div>
+         </div>
     </div>
+{% endif %}
 
+<!-- javascript -->
+<script src="{% static 'mysite/templates/jquery.min.js' %}"></script>
+<script src="{% static 'mysite/templates/bootstrap.min.js' %}"></script>
 
-
-  </body>
+</body>
 </html>
 

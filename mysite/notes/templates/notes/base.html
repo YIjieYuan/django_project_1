@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://v3.bootcss.com/favicon.ico">
+
+    <title>
+        {% block title_block %}
+        {% endblock %}
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'mysite/templates/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this   -->
+    {% block css_block %}
+    {% endblock %}
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 导航顶栏 -->
+<div class="for-foot-main-content">
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                <a class="blog-nav-item" href="{% url 'index' %}">Home</a>
+                <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Databases</a>
+                <a class="blog-nav-item active" href="{% url 'notes:index' %}#">Notes</a>
+                <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Research</a>
+                <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Life</a>
+                <a class="blog-nav-item" href="{% url 'polls:index' %}">Test</a>
+                <a class="blog-nav-item" href="{% url 'logout' %}">Logout</a>
+            </nav>
+        </div>
+    </div>
+    {% block body_block %}
+    {% endblock %}
+</div>
+
+<!-- footer -->
+<footer class="blog-footer">
+  <p>Blog built by <a href="http://www.yuanyijie.me">yuanyijie</a>.@copyright 2019</p>
+</footer>
+
+
+<!-- javascript -->
+<script src="{% static 'mysite/templates/jquery.min.js' %}"></script>
+<script src="{% static 'mysite/templates/bootstrap.min.js' %}"></script>
+
+{% block js_block %}
+{% endblock %}
+
+</body>
+</html>

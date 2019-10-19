@@ -1,0 +1,36 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    notes_detail
+{% endblock %}
+
+{% block css_block%}
+    <!-- Custom styles for this   -->
+    <link href="{% static 'mysite/templates/blog.css' %}" rel="stylesheet">
+    <!-- Code highlight-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+{% endblock %}
+
+{% block body_block %}
+<!--  文章标题  -->
+    <div class="container">
+      <div class="blog-header">
+          <h1 align='middle' class="blog-title">{{ note.title }}</h1><br/>
+      </div>
+    </div>
+
+     <!-- 文章内容 -->
+    <div class="container">
+        <div class="col-sm-12 blog-main">
+            {{ note.body|safe }}
+        </div><!-- /.blog-main -->
+    </div><!-- /.container -->
+{% endblock %}
+
+{% block js_block %}
+    <!-- Code highlight-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
+
