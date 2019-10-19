@@ -20,7 +20,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     print('hi')
     # return render(request, 'mysite/index.html', )
-    message=''
+    message = ''
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -52,7 +52,7 @@ def index(request):
             print(4)
             return render(request, 'mysite/index.html', {'message': message})
     print(5)
-    return render(request, 'mysite/index.html',{'message': message})
+    return render(request, 'mysite/index.html', {'message': message})
 
 
 @login_required
