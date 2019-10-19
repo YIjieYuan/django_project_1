@@ -56,8 +56,6 @@ def notes_index(request):
             sup_category_number += 1
     sup_category_set.sort(key=itemgetter('id'))
 
-    print(sup_category_set)
-
     context = {}
     for category in category_set:
         context[category] = Note.objects.filter(category=category).order_by('-pub_date')[:5]
