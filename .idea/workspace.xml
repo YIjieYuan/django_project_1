@@ -2,22 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1df6e48f-d9df-4c99-a3dd-c11567a57624" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/notes/static/notes/templates/note-list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/django_project_1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django_project_1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/notes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/notes/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/notes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/notes/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/notes/static/notes/templates/blog-list-custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/notes/static/notes/templates/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/notes/static/notes/templates/note-index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/notes/templates/notes/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/notes/templates/notes/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/notes/templates/notes/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/notes/templates/notes/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/notes/templates/notes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/notes/templates/notes/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/notes/templates/notes/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/notes/templates/notes/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/static/mysite/templates/blog.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/mysite/templates/blog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/static/mysite/templates/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/mysite/templates/index/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/static/mysite/templates/notes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/mysite/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/mysite/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../workshop0/rwd/foobar.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../workshop0/rwd/get-pip.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../workshop0/rwd/rango/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../workshop0/rwd/rango/urls.py" afterDir="false" />
@@ -642,12 +626,12 @@
       <workItem from="1572370680633" duration="142000" />
       <workItem from="1572442590118" duration="1157000" />
       <workItem from="1572476283195" duration="2061000" />
-      <workItem from="1572499604270" duration="49199000" />
+      <workItem from="1572499604270" duration="49418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223409000" />
+    <option name="totallyTimeSpent" value="223628000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

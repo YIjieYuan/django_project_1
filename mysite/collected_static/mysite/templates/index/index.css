@@ -1,0 +1,134 @@
+/* Custom css for yuanyijie.me/index */
+
+/* Fonts */
+/* Fonts *//* Century Gothic */
+@font-face {
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Century Gothic Regular'),url('../fonts/Century Gothic/ttf/CenturyGothic.ttf') format('ttf');
+    src: local('Century Gothic Regular'),url('../fonts/Century Gothic/woff/CenturyGothic.woff') format('woff');
+    src: local('Century Gothic Regular'),url('../fonts/Century Gothic/woff2/CenturyGothic.woff2') format('woff2');
+}
+/* Fonts *//* Raleway */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Raleway Regular'),url('../fonts/Raleway/ttf/Raleway-Regular.ttf') format('ttf');
+    src: local('Raleway Regular'),url('../fonts/Raleway/woff/Raleway-Regular.woff') format('woff');
+}
+
+/* 让光标闪烁 */
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+/* 1. Central Part -------------------- */
+/* 使用分块设计对首页内容进行排版 */
+.index-block-1 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+}
+.index-block-1-main {
+    height: calc(100% - 4.2em);/* 根据到导航栏的高度计算,4.2=1+0.4+0.4+1.2*2 */
+    flex: 1 0 auto;
+}
+
+.index-block-1-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.index-block-1-head{
+    font-size: 2.8rem;
+    font-family: "Century Gothic",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #2E2E2E;
+}
+
+.index-block-1-body{
+    font-family: "Raleway",sans-serif;
+    font-size: 0.75rem;
+    margin-top: 2em;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #999;
+}
+.index-block-1-body .typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+
+
+/* 没有登录的时候的登录页面 */
+.index-block-1-unlogged .container {
+    height: 100%;
+    z-index: 1;
+    padding: 150px 30px;
+}
+
+.index-block-1-unlogged .sign-in {
+    padding: 50px;
+	text-align: left;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 80px 30px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading {
+  margin-bottom: 10px;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-signin .error-message {
+    text-align: right;
+    color: #ff0000;
+}

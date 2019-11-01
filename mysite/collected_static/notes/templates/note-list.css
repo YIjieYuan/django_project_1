@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Century Gothic Regular'),url('./fonts/Century Gothic/ttf/CenturyGothic.ttf') format('ttf');
+	src: local('Century Gothic Regular'),url('./fonts/Century Gothic/woff/CenturyGothic.woff') format('woff');
+	src: local('Century Gothic Regular'),url('./fonts/Century Gothic/woff2/CenturyGothic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Century Gothic bold'),url('./fonts/Century Gothic/ttf/CenturyGothicBold.ttf') format('ttf');
+	src: local('Century Gothic bold'),url('./fonts/Century Gothic/woff/CenturyGothicBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Open Sans bold'), url('./fonts/Open_Sans/ttf/OpenSans-Bold.ttf') format('ttf');
+    src: local('Open Sans bold'), url('./fonts/Open_Sans/woff/OpenSans-Bold.woff') format('woff');
+}
+
+.note-list-title a {
+    font-size: 1.5em;
+    border-bottom: 50px;
+}
+
+.note-list-container {
+    font-family: "Century Gothic",sans-serif;
+    margin-top: 20px;
+    padding: 50px 50px 50px 50px;
+}
+
+.note-list-category {
+    font-weight: bold;
+    font-size :3em;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.note-list-title{
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1.2rem;
+    line-height: 24px
+}
+
+.note-date{
+	float:right;
+	font-size: 1em;
+	text-transform: uppercase;
+	color: rgba(0,0,0,.2);
+	margin-top: 7px;
+	margin-bottom: 0;
+}

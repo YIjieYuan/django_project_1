@@ -1,0 +1,9 @@
+/* note-main */
+body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.note-main {
+	flex: 1 0 auto;
+}
