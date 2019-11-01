@@ -4,6 +4,7 @@ import datetime
 from django.db import models
 from uuslug import slugify
 
+
 class Note(models.Model):
     author = models.CharField('author', max_length=15, default='Yijie Yuan')
     pub_date = models.DateTimeField('pub_date', default=datetime.datetime.now, null=True)

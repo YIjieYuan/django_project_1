@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this   -->
     <link href="{% static 'mysite/templates/blog.css' %}" rel="stylesheet">
-    <link href="{% static 'mysite/templates/index.css' %}" rel="stylesheet">
+    <link href="{% static 'mysite/templates/index/index.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
@@ -30,35 +30,31 @@
 
 <body>
 {% if user.is_authenticated %}
-    <div class="for-foot-main-content">
-        <div class="blog-masthead">
-            <div class="container">
-                <nav class="blog-nav">
-                    <a class="blog-nav-item active" href="#">Home</a>
-                    <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Databases</a>
-                    <a class="blog-nav-item" href="{% url 'notes:index' %}#">Notes</a>
-                    <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Research</a>
-                    <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Life</a>
-                    <a class="blog-nav-item" href="{% url 'polls:index' %}">Test</a>
-                    <a class="blog-nav-item" href="{% url 'logout' %}">Logout</a>
-                </nav>
-            </div>
-        </div>
-
-        <div class="index-block-1-logged">
-            <div class="container">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <p>
-                   Hello!
-                    </p>
-                </div>
-            </div>
+<div class="index-block-1">
+    <div class="blog-masthead">
+        <nav class="blog-nav">
+            <a class="blog-nav-item active" href="#">Home</a>
+            <a class="blog-nav-item" href="{% url 'index' %}">Databases</a>
+            <a class="blog-nav-item" href="{% url 'notes:index' %}">Notes</a>
+            <a class="blog-nav-item" href="{% url 'index' %}">Research</a>
+            <a class="blog-nav-item" href="{% url 'index' %}">Life</a>
+            <a class="blog-nav-item" href="{% url 'logout' %}">Logout</a>
+        </nav>
+    </div>
+    <div class="index-block-1-main">
+        <div class="index-block-1-content">
+            <h2 class="index-block-1-head">Say Something</h2>
+            <p class="index-block-1-body">/* <span class="typed-quotes">new way </span><span class="typed-cursor">|</span> */</p>
         </div>
     </div>
+</div>
+
     <!-- footer -->
+<div>
     <footer class="blog-footer">
-      <p>Blog built by <a href="http://www.yuanyijie.me">yuanyijie</a>.@copyright 2019</p>
+        <div>Site built by <a href="http://www.yuanyijie.me">yijie yuan</a></div>
     </footer>
+</div>
 
 {% else %}
     <div class="index-block-1-unlogged">
@@ -94,6 +90,10 @@
 <!-- javascript -->
 <script src="{% static 'mysite/templates/jquery.min.js' %}"></script>
 <script src="{% static 'mysite/templates/bootstrap.min.js' %}"></script>
+
+<!-- index custom javascript -->
+<script src="{% static 'mysite/templates/index/typed.js' %}"></script>
+<script src="{% static 'mysite/templates/index/index.js' %}"></script>
 
 </body>
 </html>

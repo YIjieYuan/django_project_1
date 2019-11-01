@@ -19,6 +19,7 @@
     <link href="{% static 'mysite/templates/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this   -->
+    <link href="{% static 'notes/templates/note-base.css' %}" rel="stylesheet">
     {% block css_block %}
     {% endblock %}
 
@@ -30,37 +31,33 @@
     <![endif]-->
 </head>
 <body>
-<!-- 导航顶栏 -->
-<div class="for-foot-main-content">
+    <!-- 导航顶栏 -->
     <div class="blog-masthead">
-        <div class="container">
-            <nav class="blog-nav">
-                <a class="blog-nav-item" href="{% url 'index' %}">Home</a>
-                <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Databases</a>
-                <a class="blog-nav-item active" href="{% url 'notes:index' %}#">Notes</a>
-                <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Research</a>
-                <a class="blog-nav-item" href="https://v3.bootcss.com/examples/blog/#">Life</a>
-                <a class="blog-nav-item" href="{% url 'polls:index' %}">Test</a>
-                <a class="blog-nav-item" href="{% url 'logout' %}">Logout</a>
-            </nav>
-        </div>
+        <nav class="blog-nav">
+            <a class="blog-nav-item" href="{% url 'index' %}">Home</a>
+            <a class="blog-nav-item" href="{% url 'index' %}">Databases</a>
+            <a class="blog-nav-item active" href="{% url 'notes:index' %}#">Notes</a>
+            <a class="blog-nav-item" href="{% url 'index' %}">Research</a>
+            <a class="blog-nav-item" href="{% url 'index' %}">Life</a>
+            <a class="blog-nav-item" href="{% url 'logout' %}">Logout</a>
+        </nav>
     </div>
-    {% block body_block %}
-    {% endblock %}
-</div>
+    <!-- notes app 所有页面的主要内容 -->
+    <div class="note-main">
+        {% block body_block %}
+        {% endblock %}
+    </div>
+    <!-- footer -->
+    <footer class="blog-footer">
+      <div>Site built by <a href="http://www.yuanyijie.me">yijie yuan</a></div>
+    </footer>
 
-<!-- footer -->
-<footer class="blog-footer">
-  <p>Blog built by <a href="http://www.yuanyijie.me">yuanyijie</a>.@copyright 2019</p>
-</footer>
 
-
-<!-- javascript -->
-<script src="{% static 'mysite/templates/jquery.min.js' %}"></script>
-<script src="{% static 'mysite/templates/bootstrap.min.js' %}"></script>
+    <!-- javascript -->
+    <script src="{% static 'mysite/templates/jquery.min.js' %}"></script>
+    <script src="{% static 'mysite/templates/bootstrap.min.js' %}"></script>
 
 {% block js_block %}
 {% endblock %}
-
 </body>
 </html>

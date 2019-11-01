@@ -1,0 +1,71 @@
+/* fonts */
+/* fonts *//* Century Gothic */
+@font-face {
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Century Gothic Regular'),url('./fonts/Century Gothic/ttf/CenturyGothic.ttf') format('ttf');
+	src: local('Century Gothic Regular'),url('./fonts/Century Gothic/woff/CenturyGothic.woff') format('woff');
+	src: local('Century Gothic Regular'),url('./fonts/Century Gothic/woff2/CenturyGothic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Century Gothic bold'),url('./fonts/Century Gothic/ttf/CenturyGothicBold.ttf') format('ttf');
+	src: local('Century Gothic bold'),url('./fonts/Century Gothic/woff/CenturyGothicBold.woff') format('woff');
+}
+/* fonts *//* Open Sans */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Open Sans bold'),url('./fonts/Open_Sans/ttf/OpenSans-Bold.ttf') format('ttf');
+    src: local('Open Sans bold'),url('./fonts/Open_Sans/woff/OpenSans-Bold.woff') format('woff');
+}
+
+
+
+/* in note-main */
+/*block name*/
+.block-name {
+	font-family: "Century Gothic",sans-serif;
+	font-weight: normal;
+	color: #2E2E2E;
+	text-align: left;
+}
+
+/*note-box*/
+.note-box{
+	padding: 0 12px 24px;
+	margin: 0;
+
+}
+
+.note-list-box {
+	min-height: 200px;
+	padding: 20px 35px;
+	text-align: left;
+	background: #fafafa;
+	-webkit-box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
+	-moz-box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
+	-ms-box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
+	-o-box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
+	box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
+
+}
+
+.note-category{
+	font-family: "Century Gothic",sans-serif;
+	font-weight: bold;
+	color: #2E2E2E;
+
+}
+
+.note-title{
+	font-family: "Century Gothic",sans-serif;
+	font-weight: normal;
+}
+
+
+

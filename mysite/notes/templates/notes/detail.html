@@ -8,29 +8,28 @@
 {% block css_block%}
     <!-- Custom styles for this   -->
     <link href="{% static 'mysite/templates/blog.css' %}" rel="stylesheet">
+    <!-- Typora theme-->
+    <link href="{% static 'notes/templates/note-detail.css' %}" rel="stylesheet">
     <!-- Code highlight-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+    <link href="{% static 'notes/templates/prism.css' %}" rel="stylesheet" />
 {% endblock %}
 
 {% block body_block %}
-<!--  文章标题  -->
+    <!--  文章标题  -->
     <div class="container">
-      <div class="blog-header">
-          <h1 align='middle' class="blog-title">{{ note.title }}</h1><br/>
-      </div>
+          <div align='middle' class="col-sm-12 blog-title">{{ note.title }}</div><br/>
     </div>
 
      <!-- 文章内容 -->
     <div class="container">
-        <div class="col-sm-12 blog-main">
+        <div class="col-sm-12">
             {{ note.body|safe }}
-        </div><!-- /.blog-main -->
-    </div><!-- /.container -->
+        </div>
+    </div>
 {% endblock %}
 
 {% block js_block %}
     <!-- Code highlight-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="{% static 'notes/templates/prism.js' %}"></script>
 {% endblock %}
 
