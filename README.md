@@ -1,1 +1,1 @@
-# django_project_1
+You can see the project in yuanyijie.me
