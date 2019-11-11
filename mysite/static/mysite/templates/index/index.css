@@ -38,16 +38,18 @@
 
 /* 1. Central Part -------------------- */
 /* 使用分块设计对首页内容进行排版 */
+.flex-height-100 {
+    height: 100%;
+}
+
 .index-block-1 {
-    display: flex;
-    flex-direction: column;
     height: 100%;
     -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
           box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
 }
 .index-block-1-main {
     height: calc(100% - 4.2em);/* 根据到导航栏的高度计算,4.2=1+0.4+0.4+1.2*2 */
-    flex: 1 0 auto;
+
 }
 
 .index-block-1-content{
@@ -83,8 +85,6 @@
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
 }
-
-
 
 /* 没有登录的时候的登录页面 */
 .index-block-1-unlogged .container {

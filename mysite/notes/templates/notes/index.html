@@ -16,35 +16,42 @@
     <br/>
     <br/>
     <!-- medical physics   -->
-    <div class="container">
-        {% for sup_category in sup_category_set %}
-            <h3 class="block-name"><span>{{ sup_category.id }}| </span>{{ sup_category.name }}</h3><br/>
-            {% for category in sup_category.category_list %}
-                {% if category.id == 1 or category.id == 4 or category.id == 7 or category.id == 10 %}
-                    <div class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                {% endif %}
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 note-box">
-                        <div class="note-list-box">
-                            <p><a class="note-category" href="{% url 'notes:list' category.name %}"><h4>{{ category.name }}</h4></a></p>
-                            <p>
-                            {% if category.note_list %}
-                                <ul>
-                                    {% for note in category.note_list %}
-                                        <li><a class="note-title" href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                None yet.
-                            {% endif %}
-                            </p>
-                        </div>
-                    </div>
-                {% if category.id == 3 or category.id == 6 or category.id == 9 or category.id == 12 or category.id == sup_category.max_category_id %}
-                </div>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
+    <div class="fluid-container">
+        <div class='row'>
+            <div class='col-xs-7 col-xs-offset-1'>
+                {% for sup_category in sup_category_set %}
+                    <h3 class="block-name"><span>{{ sup_category.id }}| </span>{{ sup_category.name }}</h3>
+                    <br/>
+                    {% for category in sup_category.category_list %}
+                        {% if category.id == 1 or category.id == 4 or category.id == 7 or category.id == 10 or category.id == 13 or category.id == 16 %}
+                            <div class="row">
+                        {% endif %}
+                            <div class="col-xs-4 note-box">
+                                <div class="note-list-box">
+                                    <p><a class="note-category" href="{% url 'notes:list' category.name %}"><h4>{{ category.name }}</h4></a></p>
+                                    <p>
+                                    {% if category.note_list %}
+                                        <ul>
+                                            {% for note in category.note_list %}
+                                                <li><a class="note-title" href="{% url 'notes:detail' note.category note.slug %}">{{ note.title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        None yet.
+                                    {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% if category.id == 3 or category.id == 6 or category.id == 9 or category.id == 12 or category.id == 15 or category.id == 18 or category.id == sup_category.max_category_id %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>  
     </div>
+    <br/>
+    <br/>
 {% endblock %}
 
 {% block js_block %}

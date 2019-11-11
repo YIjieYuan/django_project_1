@@ -1,9 +1,14 @@
 /* note-main */
 body {
-	height: 100%;
+	height: calc(100% + 50px);
 	display: flex;
 	flex-direction: column;
 }
 .note-main {
+	flex: 0 0 auto;
+}
+
+.fill-block {
 	flex: 1 0 auto;
 }
+
