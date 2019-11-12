@@ -44,6 +44,7 @@
 
 .note-list-box {
 	min-height: 250px;
+	border-radius: 3px;
 	padding: 20px 35px;
 	text-align: left;
 	background: #fafafa;

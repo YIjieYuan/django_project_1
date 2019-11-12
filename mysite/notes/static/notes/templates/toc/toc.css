@@ -5,7 +5,7 @@
     z-index: 98;
     background-color: rgba(255,255,255,0);
     transform: translateX(0);
-    left: calc((100% * 2 / 3) + 20px );
+    left: calc((100% * 3 / 4) + 20px );
     position: fixed !important;
     top:100px;
     position: absolute;
@@ -49,7 +49,7 @@ a.toc-link{
     font-weight:700
 }
 .toc-link::before{
-    background-color:#EEE;
+    background-color:#f5f3f3;
     content:' ';
     display:inline-block;
     height:inherit;
@@ -59,7 +59,8 @@ a.toc-link{
     width:2px
 }
 .is-active-link::before{
-    background-color:rgb(79, 141, 204);
+    /* background-color:rgb(79, 141, 204); */
+    background-color:rgb(51, 51, 51);
 }
 
 h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {

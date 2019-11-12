@@ -1,6 +1,7 @@
 /* note-main */
 body {
 	height: calc(100% + 50px);
+	
 	display: flex;
 	flex-direction: column;
 }
@@ -11,4 +12,5 @@ body {
 .fill-block {
 	flex: 1 0 auto;
 }
+
 
