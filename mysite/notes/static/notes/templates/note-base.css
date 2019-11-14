@@ -1,14 +1,103 @@
-/* note-main */
-body {
+/*Globals*/
+:root {
+	font-size:16px;
+	height: 100%;
+  }
+  /* Override Bootstrap's default container. */
+  @media (min-width: 1200px) {
+	.container {
+	  width: 970px;
+	}
+  }
+  
+  /* fonts */
+  /* fonts *//* Century Gothic */
+  @font-face {
+	  font-family: "Century Gothic";
+	  font-style: normal;
+	  font-weight: normal;
+	  src: local('Century Gothic Regular'),url('./fonts/Century Gothic/ttf/CenturyGothic.ttf') format('ttf');
+	  src: local('Century Gothic Regular'),url('./fonts/Century Gothic/woff/CenturyGothic.woff') format('woff');
+  }
+  
+  body {
+	z-index: 0;
+	font-size: 14px;
+	font-family: "Century Gothic",sans-serif;
+	line-height: 1.5em;
+	color: #555;
 	height: calc(100% + 50px);
-	
 	display: flex;
 	flex-direction: column;
-}
+  }
+  
+  /* Navigation */
+  .blog-masthead {
+	width:100%;
+	z-index: 100;
+	text-align: right;
+	font-family: "Century Gothic",sans-serif;
+	-webkit-box-shadow: inset 0 -1px 5px rgba(0,0,0,.1);
+	box-shadow: inset 0 -1px 5px rgba(0,0,0,.1); 
+	background-color: #ffffff;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	padding-right: 2.5em;
+	flex: 0 0 auto;
+  }
+  
+  /* Masthead for nav *//* Nav links */
+  .blog-nav-item {
+	position: relative;
+	display: inline-block;
+	margin-left: -4px;
+	margin-right: -4px;
+	padding: 0.3em 0.9em 0.3em 0.9em;
+	line-height: 1.5em;
+	font-size: 1rem;
+	font-weight: normal;
+	color: #5e5e5e;
+  }
+  .blog-nav-item:hover,
+  .blog-nav-item:focus {
+	color: #2E2E2E;
+	background-color: #f0f0f0;
+	text-decoration: none;
+  }
+  .blog-nav .active {
+	background-color: #f0f0f0;
+  }
+  
+  
+  /* Footer */
+  .blog-footer {
+	padding: 15px 0;
+	height: 50px;
+	width: 100%;
+	color: #999;
+	text-align: center;
+	font-size: 1em;
+	/* border-top: 1px solid #e5e5e5; */
+	flex: 0 0 auto
+  }
+  
+  .blog-footer p:last-child {
+	margin-bottom: 0;
+  }
+  
+
+  
+/* note-main */
 .note-main {
 	flex: 0 0 auto;
 }
-
+.fake-nav{
+	z-index: 2;
+	text-align: right;
+	font-family: "Century Gothic",sans-serif;
+	height: 4em;
+	flex: 0 0 auto;
+}
 .fill-block {
 	flex: 1 0 auto;
 }

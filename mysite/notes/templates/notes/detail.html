@@ -7,11 +7,11 @@
 
 {% block css_block%}
     <!-- Custom styles for this   -->
-    <link href="{% static 'mysite/templates/blog.css' %}" rel="stylesheet">
+
     <!-- Typora theme-->
     <link href="{% static 'notes/templates/note-detail.css' %}" rel="stylesheet">
     <!-- Code highlight-->
-    <link href="{% static 'notes/templates/prism.css' %}" rel="stylesheet" />
+    <link href="{% static 'notes/templates/prism/prism.css' %}" rel="stylesheet" />
     <!-- Toc Css -->
     <link href="{% static 'notes/templates/toc/toc.css' %}" rel="stylesheet">
 {% endblock %}
@@ -21,13 +21,15 @@
     <div class="container-fluid">
         <div class='row'>
             <div class="entry-content-left col-xs-2"></div>
-            <div class="entry-content col-xs-7 ">
+            <div class="entry-content-main col-xs-8 ">
+                <div class='entry-content col-xs-9'>
                     {{ note.body|safe }}
                 </br>
-                </br>
+                </br></div>
+                <div class="toc col-xs-3">
+                    </div>
             </div>
-            <div class="toc col-xs-2">
-            </div>
+
         </div>  
         </br>      
     </div>
@@ -37,7 +39,7 @@
 
 {% block js_block %}
     <!-- Code highlight-->
-    <script src="{% static 'notes/templates/prism.js' %}"></script>
+    <script src="{% static 'notes/templates/prism/prism.js' %}"></script>
     <!--  -->
     <script src="{% static 'notes/templates/toc/toc.js' %}"></script>
     <!-- Note-detail custom javascript-->

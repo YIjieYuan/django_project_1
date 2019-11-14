@@ -32,21 +32,19 @@
 	font-family: "Century Gothic",sans-serif;
 	font-weight: normal;
 	color: #2E2E2E;
-	text-align: left;
 }
 
 /*note-box*/
 .note-box{
-	padding: 0 12px 24px;
+	padding: 12px 24px;
 	margin: 0;
 
 }
 
 .note-list-box {
-	min-height: 250px;
+	min-height: 220px;
 	border-radius: 3px;
-	padding: 20px 35px;
-	text-align: left;
+	padding: 25px 0;
 	background: #fafafa;
 	-webkit-box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
 	-moz-box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
@@ -57,10 +55,15 @@
 }
 
 .note-category{
+	/* padding: px 0; */
 	font-family: "Century Gothic",sans-serif;
-	font-weight: bold;
+	text-align: center;
+}
+.note-category > a{
 	color: #2E2E2E;
-
+}
+.note-category > a > h4{
+	/* font-weight: bold; */
 }
 
 .note-title{

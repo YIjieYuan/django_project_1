@@ -21,7 +21,8 @@
 }
 
 body {
-  font-size: 14px;
+  height: 100%;
+  font-size:14px;
   font-family: "Century Gothic",sans-serif;
   line-height: 1.5em;
   color: #555;
@@ -29,12 +30,15 @@ body {
 
 /* Navigation */
 .blog-masthead {
+  width: 100%;
+  z-index: 100;
+  background-color: #ffffff;
   text-align: right;
   font-family: "Century Gothic",sans-serif;
   -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
-  box-shadow: inset 0 -2px 5px rgba(0,0,0,.1); 
-  padding-top: 1.2em;
-  padding-bottom: 1.2em;
+          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
   padding-right: 2.5em;
   flex: 0 0 auto;
 }
@@ -45,7 +49,8 @@ body {
   display: inline-block;
   margin-left: -4px;
   margin-right: -4px;
-  padding: 0.4em 0.9em 0.4em 0.9em;
+  padding: 0.3em 0.9em 0.3em 0.9em;
+  line-height: 1.5em;
   font-size: 1rem;
   font-weight: normal;
   color: #5e5e5e;
@@ -78,4 +83,13 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
+、
 

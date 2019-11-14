@@ -32,7 +32,7 @@
 </head>
 <body>
     <!-- 导航顶栏 -->
-    <div class="blog-masthead">
+    <div class="blog-masthead affix">
         <nav class="blog-nav">
             <a class="blog-nav-item" href="{% url 'index' %}">Home</a>
             <a class="blog-nav-item" href="{% url 'index' %}">Databases</a>
@@ -42,6 +42,7 @@
             <a class="blog-nav-item" href="{% url 'logout' %}">Logout</a>
         </nav>
     </div>
+    <div class="fake-nav"></div>
     <!-- notes app 所有页面的主要内容 -->
     <div class="note-main">
         {% block body_block %}
